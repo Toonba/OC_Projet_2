@@ -31,10 +31,10 @@
                 <form>
                     <label for="ville"><i class="fa-sharp fa-solid fa-location-dot"></i></label>
                     <input type="text" name="ville" id="ville" required placeholder="Marseille, France" />
-                    <button>Rechercher</button>
+                    <button><i class="fa-solid fa-magnifying-glass"></i><span>Rechercher</span></button>
                 </form>
                 <div id="divFiltres">
-                    <p>Filtres</p>
+                    <p id="filtre">Filtres</p>
                     <div class="filtres">
                         <i class="fa-solid fa-money-bill-wave"></i>
                         <p>Économique</p>
@@ -52,7 +52,10 @@
                         <p>Animaux autorisés</p>
                     </div>
                 </div>
-                <p><i class="fa-solid fa-info"></i>Plus de 500 logements sont disponibles dans cette ville</p>
+                <div id="info">
+                    <i class="fa-solid fa-info"></i>
+                    <p>Plus de 500 logements sont disponibles dans cette ville</p>
+                </div>
             </div>
             <div id="div2">
                 <div id="hebergements">
@@ -63,7 +66,10 @@
                             <div class="details">
                                 <h2><a href="#">Auberge la Cannebière</a></h2>
                                 <p>Nuit à partir de 25€</p>
-                                <p>note</p>
+                                <p>
+                                    <i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i
+                                    ><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star empty"></i>
+                                </p>
                             </div>
                         </div>
                         <div class="vignette">
@@ -71,7 +77,10 @@
                             <div class="details">
                                 <h2><a href="#">Hôtel du port</a></h2>
                                 <p>Nuit à partir de 52€</p>
-                                <p>note</p>
+                                <p>
+                                    <i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i
+                                    ><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star empty"></i>
+                                </p>
                             </div>
                         </div>
                         <div class="vignette">
@@ -79,7 +88,10 @@
                             <div class="details">
                                 <h2><a href="#">Hôtel Les mouettes</a></h2>
                                 <p>Nuit à partir de 76€</p>
-                                <p>note</p>
+                                <p>
+                                    <i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i
+                                    ><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star empty"></i>
+                                </p>
                             </div>
                         </div>
                         <div class="vignette">
@@ -87,7 +99,10 @@
                             <div class="details">
                                 <h2><a href="#">Hôtel de la mer</a></h2>
                                 <p>Nuit à partir de 46€</p>
-                                <p>note</p>
+                                <p>
+                                    <i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i
+                                    ><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star empty"></i>
+                                </p>
                             </div>
                         </div>
                         <div class="vignette">
@@ -95,7 +110,10 @@
                             <div class="details">
                                 <h2><a href="#">Auberge Le Panier</a></h2>
                                 <p>Nuit à partir de 23€</p>
-                                <p>note</p>
+                                <p>
+                                    <i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i
+                                    ><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star empty"></i>
+                                </p>
                             </div>
                         </div>
                         <div class="vignette">
@@ -103,11 +121,14 @@
                             <div class="details">
                                 <h2><a href="#">Hôtel chez Amina</a></h2>
                                 <p>Nuit à partir de 96€</p>
-                                <p>note</p>
+                                <p>
+                                    <i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i
+                                    ><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star empty"></i>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <h2>Afficher plus</h2>
+                    <h3>Afficher plus</h3>
                 </div>
                 <div id="populaire">
                     <div id="titre">
@@ -120,7 +141,10 @@
                             <div class="detailsPopulaire">
                                 <h2><a href="#">Hôtel Le soleil du matin</a></h2>
                                 <p>Nuit à partir de 128€</p>
-                                <p class="note">note</p>
+                                <p class="note">
+                                    <i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i
+                                    ><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star empty"></i>
+                                </p>
                             </div>
                         </div>
                         <div class="populaire">
@@ -128,7 +152,10 @@
                             <div class="detailsPopulaire">
                                 <h2><a href="#">Au coeur de l'eau Chambres d'hotes</a></h2>
                                 <p>Nuit à partir de 71€</p>
-                                <p class="note">note</p>
+                                <p class="note">
+                                    <i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i
+                                    ><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star empty"></i>
+                                </p>
                             </div>
                         </div>
                         <div class="populaire">
@@ -136,7 +163,10 @@
                             <div class="detailsPopulaire">
                                 <h2><a href="#">Hôtel Tout bleu et Blanc</a></h2>
                                 <p>Nuit à partir de 68€</p>
-                                <p class="note">note</p>
+                                <p class="note">
+                                    <i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star full"></i
+                                    ><i class="fa-solid fa-star full"></i><i class="fa-solid fa-star empty"></i>
+                                </p>
                             </div>
                         </div>
                     </div>
