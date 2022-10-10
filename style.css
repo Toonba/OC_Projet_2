@@ -1,6 +1,10 @@
 body {
-    font-family: "Raleway";
-    width: 100%;
+    margin: 0;
+}
+
+* {
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
 }
 
 /*Mise en page Header*/
@@ -8,22 +12,18 @@ body {
 /* Positionnement et taille de logo potentiellement pas identique à la maquette (mais dans quelle mesure ça doit être totalement identique ?) Petite marge en haut du header a cause du user agent style sheet l'enlever (pour s'approcher du rendu de la maquette) ou vaut mieux la laisser ? */
 Header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    height: 12vh;
-    margin: 0 8vh 0 2vh;
+    padding: 0 3vw 0 3vw;
 }
 
 header img {
     height: 5.5vh;
-    margin-left: 2vw;
+    margin-right: auto;
 }
 
-header nav {
+nav {
     display: flex;
-    justify-content: space-around;
-    width: 23%;
-    height: 12vh;
 }
 
 header nav a {
@@ -41,7 +41,7 @@ header nav a:hover {
 /*Mise en page div1*/
 
 #div1 {
-    margin: 0 3vw 5vh 3vw;
+    margin: 0 3vw 2vh 3vw;
 }
 h1 {
     font-size: 22px; /* comment trouver la bonne taille ? l'habitude ? utiliser des px problématique pour le responsives ? */
@@ -50,6 +50,7 @@ h1 {
 
 #div1 p {
     font-size: 15px;
+    padding: 0;
 }
 
 /*Mise en forme de la section de recherche */
@@ -67,7 +68,6 @@ label {
     background-color: #f2f2f2;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    box-sizing: border-box;
     border: solid 1px #f2f2f2;
     text-align: center;
 }
@@ -77,28 +77,30 @@ label i {
 }
 
 input {
-    box-sizing: border-box;
     height: 6vh;
     width: 15vw;
     border: solid 1px #f2f2f2;
     font-weight: bold;
-    line-height: 100%;
     font-size: 20px;
-    font-family: "Raleway";
     padding-left: 10px;
     min-width: 200px;
 }
 
 button {
-    box-sizing: border-box;
     height: 6vh;
     border: solid 1px #0065fc;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    line-height: 100%;
     color: white;
     background-color: #0065fc;
     font-size: 20px;
+    padding: 0 10px;
+}
+button:hover {
+    cursor: pointer;
+}
+form .fa-magnifying-glass {
+    display: none;
 }
 
 /*Mise en forme de la section filtre */
@@ -107,10 +109,9 @@ button {
     justify-content: space-between;
     align-items: center;
     width: 70%;
-    height: 10vh;
 }
 
-#divFiltres p {
+#divFiltres > p {
     font-size: 20px;
     font-weight: bold;
     padding: 3px;
@@ -127,8 +128,11 @@ button {
     height: 5vh;
 }
 
-.filtres p {
+.filtres > p {
     margin: 0;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 2px 4px;
 }
 
 .filtres i {
@@ -137,7 +141,7 @@ button {
     font-size: 20px;
     border-radius: 50%;
     border: solid 1px #deebff;
-    padding: 13px;
+    padding: 9px;
     margin: -1px;
 }
 
@@ -147,7 +151,7 @@ button {
     font-size: 20px;
     border-radius: 50%;
     border: solid 1px #deebff;
-    padding: 12px 15px 12px 15px;
+    padding: 9px 11px;
     margin: -1px;
 }
 #div1 p i {
@@ -160,6 +164,20 @@ button {
 
 .filtres:hover {
     background-color: #deebff;
+    border-color: #deebff;
+}
+
+#info {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+#info i {
+    color: #0065fc;
+    border: solid 1px #f2f2f2;
+    border-radius: 50%;
+    padding: 3px 8px;
+    font-size: 15px;
 }
 
 /*Mise en page Dive 2*/
@@ -176,77 +194,104 @@ button {
 }
 /* Mise en page des Vignettes dans l'onglet Hebergement*/
 #hebergements {
-    box-sizing: border-box;
     background-color: #f2f2f2;
     width: 65%;
-    height: auto;
     padding: 30px 40px 10px 40px;
     border-radius: 20px;
 }
 
 #vignetteHebergement {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-content: space-between;
-    height: 55vh;
-    margin: 2vh 0 2vh 0;
+    row-gap: 2vw;
+    margin: 2vh 0 0 0;
 }
 
 .vignette {
     background-color: white;
     border: solid 1px #deebff;
     width: 30%;
-    height: 45%;
+    height: 14vw;
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
     border-radius: 20px;
     box-shadow: 2px 2px 20px #f2f2f2; /*Je suis pas convaincu qu'il y ai des ombres ? */
+    color: black;
+    text-decoration: none;
+}
+.full {
+    color: #0065fc;
+}
+.empty {
+    color: #deebff;
 }
 
 .details {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-#div2 a {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-h2 {
+.details h2 {
     font-size: 16px;
     margin: 0;
-    padding: 0 0 0px 15px;
+    padding: 2px 0 2px 15px;
     font-weight: bold;
 }
 
-p {
+.details > p {
     margin: 0;
-    padding: 0 0 0 15px;
+    padding: 5px 0 5px 15px;
     font-size: 13px;
 }
 
-.vignette img {
-    /*je trouve les images un peu plus zoomer, j'ai penser à utiliser les images en background plutôt qu'en asset HTML pour pouvoir modifier leur taille*/
-    width: 96%;
+#imgHeberge1 {
+    background-image: url("images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg");
+    background-size: 100% 110%;
+}
+#imgHeberge2 {
+    background-image: url("images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg");
+    background-size: 105% 150%;
+}
+#imgHeberge3 {
+    background-image: url("images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg");
+    background-size: 120% 150%;
+}
+#imgHeberge4 {
+    background-image: url("images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg");
+    background-size: 100% 200%;
+}
+#imgHeberge5 {
+    background-image: url("images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg");
+    background-size: 120% 150%;
+}
+#imgHeberge6 {
+    background-image: url("images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg");
+    background-size: 150% 250%;
+}
+#imgHeberge1,
+#imgHeberge2,
+#imgHeberge3,
+#imgHeberge4,
+#imgHeberge5,
+#imgHeberge6 {
+    width: 94%;
     height: 60%;
-    align-self: center;
+    margin: 0.5vw 0 0.5vw 0.5vw;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    margin-top: 2%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-#hebergement h2 {
-    font-size: 18px;
+h3 {
+    font-size: 16px;
 }
 
 /* Mise en place des vignettes dans la div les plus populaire*/
 #populaire {
-    box-sizing: border-box;
     background-color: #f2f2f2;
     height: auto;
     width: 32%;
@@ -254,49 +299,86 @@ p {
     border-radius: 20px;
 }
 
+#populaire a {
+    color: black;
+    text-decoration: none;
+}
+
 #titre {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0;
+}
+#titre h1 {
+    margin-bottom: 0;
 }
 
 #titre i {
     align-self: center;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 #vignettePopulaire {
-    height: 55vh;
+    height: auto;
+    margin: 2vh 0 0 0;
 }
 
 .populaire {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     background-color: white;
     border: solid 1px #deebff;
     width: 100%;
-    height: 30%;
+    height: 10vw;
     border-radius: 20px;
-    margin: 0 0 30px 0;
-    box-shadow: 4px 4px 4px #f2f2f2; /*Je suis pas convaincu qu'il y ai des ombres ? */
+    margin: 0 0 1vw 0;
 }
 
-.populaire img {
+#imgPop1 {
+    background-image: url("images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg");
+    background-size: 160% 110%;
+}
+#imgPop2 {
+    background-image: url("images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg");
+    background-size: 160% 110%;
+}
+#imgPop3 {
+    background-image: url("images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg");
+    background-size: 150% 140%;
+}
+#imgPop1,
+#imgPop2,
+#imgPop3 {
     width: 35%;
-    height: 92%;
+    height: 90%;
+    margin-left: 0.5vw;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    margin: 5px 10px 5px 5px;
-    float: left;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .detailsPopulaire {
-    padding: 15px 10px 10px 0;
+    width: 65%;
     height: 90%;
+    padding: 0 2vw;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
 }
 
-.note {
-    justify-self: end; /*Pourquoi en utilisant ça ca veux pas me le placer en bas de la div ? */
+.detailsPopulaire h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.detailsPopulaire p {
+    font-size: 12px;
+}
+
+.detailsPopulaire .note {
+    margin-top: auto;
 }
 
 /*Mise en forme Activité */
@@ -307,50 +389,86 @@ p {
 
 #activite {
     width: 100%;
-    height: 61vh;
+    height: 40vw;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-content: space-between;
-    row-gap: 5vh;
 }
 
 .large {
     width: 22%;
-    height: 98.2%;
+    height: 100%;
     border-radius: 20px;
     border: solid 1px #f2f2f2;
-    box-shadow: 4px 4px 4px #f2f2f2;
+    box-shadow: 0px 0px 6px #f2f2f2;
+    color: black;
+    text-decoration: none;
 }
 
 .medium {
     width: 22%;
-    height: 44.6%;
+    height: 45%;
     border-radius: 20px;
     border: solid 1px #f2f2f2;
-    box-shadow: 4px 4px 4px #f2f2f2;
+    box-shadow: 0px 0px 6px #f2f2f2;
+    color: black;
+    text-decoration: none;
 }
 
-.large img {
+#large1 {
+    background-image: url("images/activites/3_medium/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg");
+}
+#large2 {
+    background-image: url("images/activites/4_small/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg");
+}
+#large1,
+#large2 {
     width: 100%;
-    height: 90.1%;
+    height: 90%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200% 100%;
 }
 
-.medium img {
+#medium1 {
+    background-image: url("images/activites/4_small/paul-hermann-QFTrLdQIRhI-unsplash.jpg");
+}
+#medium2 {
+    background-image: url("images/activites/2_large/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg");
+}
+#medium3 {
+    background-image: url("images/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg");
+}
+#medium4 {
+    background-image: url("images/activites/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg");
+}
+
+#medium1,
+#medium2,
+#medium3,
+#medium4 {
     width: 100%;
-    height: 80%;
+    height: 78%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 200%;
 }
-
 .large h2 {
-    padding: 1vh 1vw 1vh 2vw;
+    font-size: 16px;
+    padding: 5% 2.5% 2.5% 5%;
+    margin: 0;
 }
 
 .medium h2 {
-    padding: 1vh 1vw 1vh 2vw;
+    font-size: 16px;
+    padding: 5% 2.5% 2.5% 5%;
+    margin: 0;
 }
 
 /*Mise en page footer */
@@ -381,11 +499,30 @@ dd {
 Diminuer la taille de la section recherche ?
 J'aurais pas utiliser les même breackpoint, genre j'aurais utiliser un max width plus grand car le rendu est pas top, ça veux dire que c'est à moi de modifier mes mesure pour que le rendu soit mieux ? ou je peux changer le breackpoint ? */
 @media all and (min-width: 768px) and (max-width: 992px) {
+    #div2 {
+        display: block;
+    }
+    #hebergements {
+        width: 100%;
+        margin-bottom: 5vh;
+    }
     #vignetteHebergement {
         height: 35vh;
     }
+    #populaire {
+        width: 100%;
+        height: auto;
+    }
+    .populaire {
+        height: 100%;
+        width: 30%;
+    }
     #vignettePopulaire {
-        height: 35vh;
+        height: 8vh;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 2vh;
     }
     #activite {
         height: 38.8vh;
@@ -405,10 +542,226 @@ J'aurais pas utiliser les même breackpoint, genre j'aurais utiliser un max widt
     #divFiltres {
         width: 100%;
     }
+}
+/*media query pour le responsive de la version mobile*/
+@media all and (max-width: 768px) {
+    /*responsive Header*/
+    header {
+        display: block;
+        width: 100%;
+        margin: 0 0 2vh 0;
+        height: auto;
+    }
+    header img {
+        display: block;
+        margin: auto;
+    }
+    nav {
+        display: flex;
+        width: 100%;
+        height: 6vh;
+    }
+    header nav a {
+        line-height: 6vh;
+        width: 50%;
+        text-align: center;
+        border-bottom: solid 2px #f2f2f2;
+    }
+    header nav a:hover {
+        border-top: none;
+        border-bottom-color: #0065fc;
+        color: #0065fc;
+    }
+    /*Responsiv div1*/
+    #div1 {
+        height: 55vh;
+        padding: 8px;
+    }
+    #div1 h1 {
+        font-size: 22px; /* comment trouver la bonne taille ? l'habitude ? utiliser des px problématique pour le responsives ? */
+        font-weight: bold;
+        width: 90%;
+    }
+    #div1 > p {
+        padding: 0;
+        margin-bottom: 2vh;
+    }
+    /*Responsiv form*/
+    form {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 2vh;
+    }
+    label {
+        width: 50px;
+        height: 8vh;
+        line-height: 8vh;
+    }
+    input {
+        width: 60vw;
+        height: 8vh;
+        line-height: 8vh;
+    }
+    button {
+        width: 50px;
+        height: 8vh;
+        line-height: 8vh;
+    }
+    button span {
+        display: none;
+    }
+    form .fa-magnifying-glass {
+        display: inline;
+    }
+    /*Responsiv Filtre*/
+    #divFiltres {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        width: 100%;
+        height: 20vh;
+    }
+    #filtre {
+        width: 100%;
+    }
+    .filtres {
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: Opx;
+        width: 50%;
+        column-gap: 0px;
+    }
+    .filtres i {
+        background-color: #deebff;
+        font-size: 15px;
+        padding: 10px;
+        border: none;
+    }
+    #familial i {
+        font-size: 15px;
+        padding: 10px 12px 10px 12px;
+        border: none;
+        background-color: #deebff;
+    }
+    #divFiltres p {
+        font-size: 10px;
+    }
+    /*Mise en forme Les plus populaire*/
+    #div2 {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        margin: 0;
+    }
     #hebergements {
-        padding: 10px 15px 10px 15px;
+        width: 100%;
+        margin-bottom: 5vh;
+        background-color: white;
+        padding: 3vw;
     }
     #populaire {
-        padding: 10px 15px 10px 15px;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        padding: 3vw;
+    }
+    .populaire {
+        height: 100%;
+        width: 100%;
+    }
+    #vignettePopulaire {
+        height: 20vh;
+        width: 100%;
+        margin: 0 0 1vh 0;
+    }
+    /*Mise en forme responsive Hebergement*/
+    #vignetteHebergement {
+        display: block;
+        height: auto;
+        margin: 2vh 0 2vh 0;
+        row-gap: 2vh;
+    }
+    .vignette {
+        background-color: white;
+        border: solid 1px #deebff;
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        row-gap: 7px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 20px #f2f2f2;
+        margin-bottom: 2vh;
+    }
+    /*Mise en forme responsiv activité*/
+    #div3 {
+        height: auto;
+        margin: 8px;
+        padding: 3vw 0vw 3vw 3vw;
+    }
+
+    #activite {
+        width: 100%;
+        height: auto;
+        row-gap: 5vh;
+    }
+
+    .large {
+        width: 100%;
+        height: 30vh;
+        border-radius: 20px;
+        border: solid 1px #f2f2f2;
+        box-shadow: 4px 4px 4px #f2f2f2;
+    }
+
+    .medium {
+        width: 100%;
+        height: 30vh;
+        border-radius: 20px;
+        border: solid 1px #f2f2f2;
+        box-shadow: 4px 4px 4px #f2f2f2;
+    }
+
+    .large img {
+        width: 100%;
+        height: 75%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .medium img {
+        width: 100%;
+        height: 75%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .large h2 {
+        padding: 2vh 1vw 1vh 5vw;
+    }
+
+    .medium h2 {
+        padding: 2vh 1vw 1vh 5vw;
+    }
+
+    /*Mise en forme responsive footer*/
+    footer {
+        background-color: #f2f2f2;
+        display: block;
+        height: auto;
+        padding: 2vh 5vw 5vh 5vw;
+    }
+    dt {
+        font-weight: bold;
+        font-size: 15px;
+        margin-bottom: 15px;
+        margin-left: 5px;
+    }
+
+    dd {
+        list-style: none;
+        font-size: 12px;
+        margin-left: 5px;
+        margin-bottom: 5px;
     }
 }
