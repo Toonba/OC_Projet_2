@@ -1,6 +1,6 @@
-body {
-    font-family: "Raleway";
-    width: 100%;
+* {
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
 }
 
 /*Mise en page Header*/
@@ -41,7 +41,7 @@ header nav a:hover {
 /*Mise en page div1*/
 
 #div1 {
-    margin: 0 3vw 5vh 3vw;
+    margin: 0 3vw 3vh 3vw;
 }
 h1 {
     font-size: 22px; /* comment trouver la bonne taille ? l'habitude ? utiliser des px problématique pour le responsives ? */
@@ -67,7 +67,6 @@ label {
     background-color: #f2f2f2;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    box-sizing: border-box;
     border: solid 1px #f2f2f2;
     text-align: center;
 }
@@ -77,7 +76,6 @@ label i {
 }
 
 input {
-    box-sizing: border-box;
     height: 6vh;
     width: 15vw;
     border: solid 1px #f2f2f2;
@@ -90,7 +88,6 @@ input {
 }
 
 button {
-    box-sizing: border-box;
     height: 6vh;
     border: solid 1px #0065fc;
     border-top-right-radius: 10px;
@@ -101,13 +98,22 @@ button {
     font-size: 20px;
 }
 
+form .fa-magnifying-glass {
+    display: none;
+}
+
 /*Mise en forme de la section filtre */
 #divFiltres {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 70%;
-    height: 10vh;
+    width: 100%;
+    column-gap: 8px;
+}
+#ongletFiltres {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    row-gap: 8px;
 }
 
 #divFiltres p {
@@ -123,11 +129,10 @@ button {
     align-items: center;
     border: solid 2px #f2f2f2;
     border-radius: 30px;
-    padding: 2px 10px 2px 0px;
-    height: 5vh;
+    padding: 0px 10px 0px 0px;
 }
 
-.filtres p {
+#divFiltres .filtres p {
     margin: 0;
 }
 
@@ -161,6 +166,18 @@ button {
 .filtres:hover {
     background-color: #deebff;
 }
+#info {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+#info i {
+    color: #0065fc;
+    font-size: 12px;
+    border: solid 2px #f2f2f2;
+    border-radius: 50%;
+    padding: 4px 8px 4px 8px;
+}
 
 /*Mise en page Dive 2*/
 #div2 {
@@ -176,11 +193,10 @@ button {
 }
 /* Mise en page des Vignettes dans l'onglet Hebergement*/
 #hebergements {
-    box-sizing: border-box;
     background-color: #f2f2f2;
     width: 65%;
     height: auto;
-    padding: 30px 40px 10px 40px;
+    padding: 30px;
     border-radius: 20px;
 }
 
@@ -188,8 +204,8 @@ button {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-content: space-between;
-    height: 55vh;
+    row-gap: 16px;
+    column-gap: 16px;
     margin: 2vh 0 2vh 0;
 }
 
@@ -197,12 +213,10 @@ button {
     background-color: white;
     border: solid 1px #deebff;
     width: 30%;
-    height: 45%;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
     border-radius: 20px;
-    box-shadow: 2px 2px 20px #f2f2f2; /*Je suis pas convaincu qu'il y ai des ombres ? */
+    box-shadow: 0px 0px 20px #f2f2f2; /*Je suis pas convaincu qu'il y ai des ombres ? */
+    padding: 8px;
+    flex-grow: 1;
 }
 
 .details {
@@ -217,40 +231,45 @@ button {
     font-weight: bold;
 }
 
-h2 {
+.details h2 {
     font-size: 16px;
     margin: 0;
-    padding: 0 0 0px 15px;
+    padding: 0 0 0px 16px;
     font-weight: bold;
 }
 
-p {
+.details p {
     margin: 0;
-    padding: 0 0 0 15px;
+    padding: 4px 0 4px 16px;
     font-size: 13px;
+    font-weight: normal;
 }
 
 .vignette img {
-    /*je trouve les images un peu plus zoomer, j'ai penser à utiliser les images en background plutôt qu'en asset HTML pour pouvoir modifier leur taille*/
-    width: 96%;
-    height: 60%;
+    width: 100%;
+    height: 120px;
     align-self: center;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    margin-top: 2%;
+    border-radius: 16px 16px 0 0;
+    object-fit: cover;
+    object-position: center;
 }
 
 #hebergement h2 {
     font-size: 18px;
 }
 
+.full {
+    color: #0065fc;
+}
+.empty {
+    color: #deebff;
+}
+
 /* Mise en place des vignettes dans la div les plus populaire*/
 #populaire {
-    box-sizing: border-box;
     background-color: #f2f2f2;
-    height: auto;
     width: 32%;
-    padding: 30px 40px 10px 40px;
+    padding: 30px;
     border-radius: 20px;
 }
 
@@ -264,93 +283,118 @@ p {
     font-size: 20px;
 }
 
-#vignettePopulaire {
-    height: 55vh;
-}
-
 .populaire {
     background-color: white;
     border: solid 1px #deebff;
     width: 100%;
-    height: 30%;
+    display: flex;
     border-radius: 20px;
-    margin: 0 0 30px 0;
-    box-shadow: 4px 4px 4px #f2f2f2; /*Je suis pas convaincu qu'il y ai des ombres ? */
+    margin: 8px 0 8px 0;
+    box-shadow: 0px 0px 20px #f2f2f2; /*Je suis pas convaincu qu'il y ai des ombres ? */
 }
 
-.populaire img {
-    width: 35%;
-    height: 92%;
+.imagePopulaire {
+    width: 40%;
+    padding: 8px;
+    overflow: hidden;
+    height: 150px;
+}
+
+.imagePopulaire img {
+    height: 100%;
+    width: 100%;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    margin: 5px 10px 5px 5px;
-    float: left;
+    object-fit: cover;
+    object-position: center;
 }
 
 .detailsPopulaire {
-    padding: 15px 10px 10px 0;
-    height: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    height: 150px;
+    padding: 8px;
+    width: 60%;
 }
 
-.note {
-    justify-self: end; /*Pourquoi en utilisant ça ca veux pas me le placer en bas de la div ? */
+.detailsPopulaire h2 {
+    font-size: 16px;
+    margin: 0;
+    padding: 0 8px 0px 8px;
+    font-weight: bold;
+}
+.detailsPopulaire p {
+    margin: 0;
+    padding: 4px 0 4px 8px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.detailsPopulaire .note {
+    margin-top: auto;
 }
 
 /*Mise en forme Activité */
 #div3 {
-    height: auto;
     margin: 6vh 3vw 6vh 3vw;
 }
 
 #activite {
     width: 100%;
-    height: 61vh;
+    height: 500px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: space-between;
-    row-gap: 5vh;
+    justify-content: space-around;
 }
 
 .large {
     width: 22%;
-    height: 98.2%;
     border-radius: 20px;
     border: solid 1px #f2f2f2;
     box-shadow: 4px 4px 4px #f2f2f2;
+    text-decoration: none;
+    color: black;
 }
 
 .medium {
     width: 22%;
-    height: 44.6%;
     border-radius: 20px;
     border: solid 1px #f2f2f2;
     box-shadow: 4px 4px 4px #f2f2f2;
+    text-decoration: none;
+    color: black;
 }
 
 .large img {
     width: 100%;
-    height: 90.1%;
+    height: 400px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .medium img {
     width: 100%;
-    height: 80%;
+    height: 150px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .large h2 {
-    padding: 1vh 1vw 1vh 2vw;
+    font-size: 16px;
+    padding: 16px;
+    margin: 0;
 }
 
 .medium h2 {
-    padding: 1vh 1vw 1vh 2vw;
+    font-size: 16px;
+    padding: 16px;
+    margin: 0;
 }
 
 /*Mise en page footer */
@@ -381,34 +425,38 @@ dd {
 Diminuer la taille de la section recherche ?
 J'aurais pas utiliser les même breackpoint, genre j'aurais utiliser un max width plus grand car le rendu est pas top, ça veux dire que c'est à moi de modifier mes mesure pour que le rendu soit mieux ? ou je peux changer le breackpoint ? */
 @media all and (min-width: 768px) and (max-width: 992px) {
-    #vignetteHebergement {
-        height: 35vh;
-    }
-    #vignettePopulaire {
-        height: 35vh;
-    }
-    #activite {
-        height: 38.8vh;
-    }
-    .large {
-        height: 90%;
-    }
-    .medium {
-        height: 37.7%;
-    }
-    h2 {
-        font-size: 13px;
-    }
-    p {
-        font-size: 8px;
-    }
-    #divFiltres {
-        width: 100%;
-    }
-    #hebergements {
-        padding: 10px 15px 10px 15px;
+    #div2 {
+        display: flex;
+        flex-direction: column-reverse;
+        row-gap: 16px;
+        margin: 2vh 3vw 2vh 3vw;
     }
     #populaire {
-        padding: 10px 15px 10px 15px;
+        width: 100%;
+    }
+    #vignettePopulaire {
+        display: flex;
+        justify-content: space-between;
+        row-gap: 16px;
+        column-gap: 16px;
+    }
+    .populaire {
+        width: 30%;
+    }
+    #hebergements {
+        width: 100%;
+    }
+    #vignetteHerbegement {
+        column-gap: 8px;
+        row-gap: 8px;
+    }
+    #activite {
+        height: 400px;
+    }
+    .large img {
+        height: 300px;
+    }
+    .medium img {
+        height: 100px;
     }
 }
