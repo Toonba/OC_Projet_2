@@ -2,6 +2,9 @@
     font-family: "Raleway", sans-serif;
     box-sizing: border-box;
 }
+body {
+    margin: 0;
+}
 
 /*Mise en page Header*/
 
@@ -214,7 +217,7 @@ form .fa-magnifying-glass {
     border: solid 1px #deebff;
     width: 30%;
     border-radius: 20px;
-    box-shadow: 0px 0px 20px #f2f2f2; /*Je suis pas convaincu qu'il y ai des ombres ? */
+    box-shadow: 0 0 20px lightgrey; /*Je suis pas convaincu qu'il y ai des ombres ? */
     padding: 8px;
     flex-grow: 1;
 }
@@ -225,15 +228,14 @@ form .fa-magnifying-glass {
     justify-content: space-around;
 }
 
-#div2 a {
+a {
     color: black;
     text-decoration: none;
-    font-weight: bold;
 }
 
 .details h2 {
     font-size: 16px;
-    margin: 0;
+    margin: 4px 0 0 0;
     padding: 0 0 0px 16px;
     font-weight: bold;
 }
@@ -290,7 +292,7 @@ form .fa-magnifying-glass {
     display: flex;
     border-radius: 20px;
     margin: 8px 0 8px 0;
-    box-shadow: 0px 0px 20px #f2f2f2; /*Je suis pas convaincu qu'il y ai des ombres ? */
+    box-shadow: 0 0 20px lightgrey; /*Je suis pas convaincu qu'il y ai des ombres ? */
 }
 
 .imagePopulaire {
@@ -353,7 +355,7 @@ form .fa-magnifying-glass {
     width: 22%;
     border-radius: 20px;
     border: solid 1px #f2f2f2;
-    box-shadow: 4px 4px 4px #f2f2f2;
+    box-shadow: 0 0 20px lightgrey;
     text-decoration: none;
     color: black;
 }
@@ -362,7 +364,7 @@ form .fa-magnifying-glass {
     width: 22%;
     border-radius: 20px;
     border: solid 1px #f2f2f2;
-    box-shadow: 4px 4px 4px #f2f2f2;
+    box-shadow: 0 0 20px lightgrey;
     text-decoration: none;
     color: black;
 }
@@ -421,9 +423,7 @@ dd {
     margin-bottom: 5px;
 }
 
-/*Media querry Ipad est ce qu'il vaut mieux faire des changements pour toutes les hauteurs ? ou alors comme je fais là utiliser des hauteur de % qui dépendent d'une seul valeur ?
-Diminuer la taille de la section recherche ?
-J'aurais pas utiliser les même breackpoint, genre j'aurais utiliser un max width plus grand car le rendu est pas top, ça veux dire que c'est à moi de modifier mes mesure pour que le rendu soit mieux ? ou je peux changer le breackpoint ? */
+/*Responsive tablette*/
 @media all and (min-width: 768px) and (max-width: 992px) {
     #div2 {
         display: flex;
@@ -442,6 +442,7 @@ J'aurais pas utiliser les même breackpoint, genre j'aurais utiliser un max widt
     }
     .populaire {
         width: 30%;
+        flex-grow: 1;
     }
     #hebergements {
         width: 100%;
@@ -458,5 +459,193 @@ J'aurais pas utiliser les même breackpoint, genre j'aurais utiliser un max widt
     }
     .medium img {
         height: 100px;
+    }
+    #activite h2 {
+        font-size: 15px;
+    }
+}
+
+/*Responsive Smartphone Est ce qu'il faudrait pas faire un breackpoint suplémentaire pour afficher les vignette hébergement par 2 ? */
+@media all and (max-width: 768px) {
+    /*Header Smarthpone*/
+    header {
+        display: block;
+        width: 100%;
+        margin: 0 0 2vh 0;
+        height: auto;
+    }
+    header img {
+        display: block;
+        margin: auto;
+    }
+    header nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 6vh;
+    }
+    header nav a {
+        width: 50%;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        line-height: 6vh;
+        padding: 0 2vw 0 2vw;
+        border-bottom: solid 2px #f2f2f2;
+    }
+    header nav a:hover {
+        border-bottom-color: #0065fc;
+        border-top: none;
+        color: #0065fc;
+    }
+    /*Responsiv form*/
+    form {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+    label {
+        width: 50px;
+        height: 8vh;
+        line-height: 8vh;
+    }
+    input {
+        width: 60vw;
+        height: 8vh;
+        line-height: 8vh;
+    }
+    button {
+        width: 50px;
+        height: 8vh;
+        line-height: 8vh;
+    }
+    button span {
+        display: none;
+    }
+    form .fa-magnifying-glass {
+        display: inline;
+    }
+    /*Responsiv Filtre*/
+    #divFiltres {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        width: 100%;
+    }
+    #filtre {
+        width: 100%;
+    }
+    #filtre > p {
+        font-size: 15px;
+    }
+    #ongletFiltres {
+        width: 100%;
+    }
+    .filtres {
+        justify-content: flex-start;
+        align-items: center;
+        width: 48%;
+        column-gap: 2px;
+    }
+    .filtres i {
+        background-color: #deebff;
+        font-size: 15px;
+        padding: 10px;
+        border: none;
+    }
+    #familial i {
+        font-size: 15px;
+        padding: 10px 12px 10px 12px;
+        border: none;
+        background-color: #deebff;
+    }
+    #divFiltres .filtres > p {
+        font-size: 12px;
+    }
+    /*Mise en forme Les plus populaire*/
+    #div2 {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        margin: 0;
+    }
+    #populaire {
+        width: 100%;
+        border-radius: 0;
+        padding: 20px;
+    }
+    #vignettePopulaire {
+        width: 100%;
+        margin: 0 0 1vh 0;
+    }
+
+    /*Mise en forme responsive Hebergement*/
+    #hebergements {
+        width: 100%;
+        margin-bottom: 0;
+        background-color: white;
+        padding: 20px;
+    }
+    #vignetteHebergement {
+        display: block;
+        margin: 2vh 0 2vh 0;
+    }
+    .vignette {
+        display: block;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    .vignette img {
+        display: block;
+        width: 100%;
+        align-self: center;
+        border-radius: 16px 16px 0 0;
+        object-fit: cover;
+        object-position: center;
+    }
+    .details h2 {
+        margin-top: 2px;
+    }
+    h3 {
+        margin-bottom: 0;
+    }
+    /*Mise en forme responsiv activité*/
+    #div3 {
+        margin: 8px;
+        padding: 20px;
+    }
+    #activite {
+        width: 100%;
+        height: auto;
+        row-gap: 5vh;
+    }
+    .large {
+        width: 100%;
+    }
+    .medium {
+        width: 100%;
+    }
+    .large img {
+        height: 150px;
+    }
+    /*footer smartphone*/
+    footer {
+        background-color: #f2f2f2;
+        display: block;
+        height: auto;
+        padding: 2vh 5vw 5vh 5vw;
+    }
+    dt {
+        font-weight: bold;
+        font-size: 15px;
+        margin-bottom: 15px;
+        margin-left: 5px;
+    }
+
+    dd {
+        list-style: none;
+        font-size: 12px;
+        margin-left: 5px;
+        margin-bottom: 5px;
     }
 }
