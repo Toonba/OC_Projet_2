@@ -34,6 +34,7 @@ header nav a {
     text-decoration: none;
     line-height: 12vh;
     padding: 0 2vw 0 2vw;
+    border-top: solid 2px transparent;
 }
 
 header nav a:hover {
@@ -41,9 +42,9 @@ header nav a:hover {
     color: #0065fc;
 }
 
-/*Mise en page div1*/
+/*Mise en page#container1*/
 
-#div1 {
+#container1 {
     margin: 0 3vw 3vh 3vw;
 }
 h1 {
@@ -51,7 +52,7 @@ h1 {
     font-weight: bold;
 }
 
-#div1 p {
+#container1 p {
     font-size: 15px;
 }
 
@@ -88,6 +89,7 @@ input {
     font-family: "Raleway";
     padding-left: 10px;
     min-width: 200px;
+    opacity: 0.8;
 }
 
 button {
@@ -122,7 +124,7 @@ form .fa-magnifying-glass {
 #divFiltres p {
     font-size: 20px;
     font-weight: bold;
-    padding: 3px;
+    padding: 3px 8px 3px 3px;
 }
 
 .filtres {
@@ -158,7 +160,7 @@ form .fa-magnifying-glass {
     padding: 12px 15px 12px 15px;
     margin: -1px;
 }
-#div1 p i {
+#container1 p i {
     color: #0065fc;
     border: solid #deebff 1px;
     border-radius: 100%;
@@ -183,7 +185,7 @@ form .fa-magnifying-glass {
 }
 
 /*Mise en page Dive 2*/
-#div2 {
+#container2 {
     display: flex;
     justify-content: space-between;
     margin: 2vh 3vw 2vh 3vw;
@@ -191,11 +193,11 @@ form .fa-magnifying-glass {
 
 /*Mise en page du titre de la section hebergement*/
 
-#hebergements h1 {
+.hebergements h2 {
     margin-bottom: 0;
 }
 /* Mise en page des Vignettes dans l'onglet Hebergement*/
-#hebergements {
+.hebergements {
     background-color: #f2f2f2;
     width: 65%;
     height: auto;
@@ -203,7 +205,7 @@ form .fa-magnifying-glass {
     border-radius: 20px;
 }
 
-#vignetteHebergement {
+.vignetteHebergement {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -217,7 +219,7 @@ form .fa-magnifying-glass {
     border: solid 1px #deebff;
     width: 30%;
     border-radius: 20px;
-    box-shadow: 0 0 20px lightgrey; /*Je suis pas convaincu qu'il y ai des ombres ? */
+    box-shadow: 0 0 20px #cfcece;
     padding: 8px;
     flex-grow: 1;
 }
@@ -267,8 +269,8 @@ a {
     color: #deebff;
 }
 
-/* Mise en place des vignettes dans la div les plus populaire*/
-#populaire {
+/* Mise en place des vignettes dans la div les plus.populaire*/
+.populaire {
     background-color: #f2f2f2;
     width: 32%;
     padding: 30px;
@@ -279,20 +281,23 @@ a {
     display: flex;
     justify-content: space-between;
 }
+#titre h2 {
+    margin-bottom: 0;
+}
 
 #titre i {
     align-self: center;
     font-size: 20px;
 }
 
-.populaire {
+.cartePopulaire {
     background-color: white;
     border: solid 1px #deebff;
     width: 100%;
     display: flex;
     border-radius: 20px;
-    margin: 8px 0 8px 0;
-    box-shadow: 0 0 20px lightgrey; /*Je suis pas convaincu qu'il y ai des ombres ? */
+    margin: 2vh 0 2vh 0;
+    box-shadow: 0 0 20px #cfcece;
 }
 
 .imagePopulaire {
@@ -337,11 +342,11 @@ a {
 }
 
 /*Mise en forme Activité */
-#div3 {
+#container3 {
     margin: 6vh 3vw 6vh 3vw;
 }
 
-#activite {
+.activite {
     width: 100%;
     height: 500px;
     display: flex;
@@ -378,23 +383,28 @@ a {
     object-position: center;
 }
 
-.medium img {
+.imageMedium {
     width: 100%;
-    height: 150px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     object-fit: cover;
     object-position: center;
 }
-
-.large h2 {
-    font-size: 16px;
-    padding: 16px;
-    margin: 0;
+.medium1 {
+    height: 200px;
+}
+.medium2 {
+    height: 100px;
+}
+.medium3 {
+    height: 130px;
+}
+.medium4 {
+    height: 150px;
 }
 
-.medium h2 {
-    font-size: 16px;
+.activite h2 {
+    font-size: 1.1vw;
     padding: 16px;
     margin: 0;
 }
@@ -409,59 +419,62 @@ footer {
     padding: 2vh 5vw 5vh 5vw;
 }
 
-dt {
+ul:before {
+    content: attr(aria-label);
+    font-size: 1.5vw;
     font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 10px;
-    margin-left: 5px;
 }
 
-dd {
+li {
     list-style: none;
-    font-size: 15px;
-    margin-left: 5px;
+    font-size: 1.2vw;
     margin-bottom: 5px;
+    padding-bottom: 0.2rem;
+}
+
+li:first-child {
+    padding-top: 1rem;
 }
 
 /*Responsive tablette*/
 @media all and (min-width: 768px) and (max-width: 992px) {
-    #div2 {
+    #container2 {
         display: flex;
         flex-direction: column-reverse;
         row-gap: 16px;
         margin: 2vh 3vw 2vh 3vw;
     }
-    #populaire {
+    .populaire {
         width: 100%;
     }
-    #vignettePopulaire {
+    .vignettePopulaire {
         display: flex;
         justify-content: space-between;
         row-gap: 16px;
         column-gap: 16px;
     }
-    .populaire {
+    .cartePopulaire {
         width: 30%;
         flex-grow: 1;
     }
-    #hebergements {
+    .hebergements {
         width: 100%;
     }
     #vignetteHerbegement {
         column-gap: 8px;
         row-gap: 8px;
     }
-    #activite {
+    .activite {
         height: 400px;
     }
     .large img {
         height: 300px;
     }
-    .medium img {
+    .medium1,
+    .medium2,
+    .medium3,
+    .medium4 {
         height: 100px;
-    }
-    #activite h2 {
-        font-size: 15px;
     }
 }
 
@@ -562,31 +575,31 @@ dd {
     #divFiltres .filtres > p {
         font-size: 12px;
     }
-    /*Mise en forme Les plus populaire*/
-    #div2 {
+    /*Mise en forme Les plus.populaire*/
+    #container2 {
         display: flex;
         flex-direction: column-reverse;
         width: 100%;
         margin: 0;
     }
-    #populaire {
+    .populaire {
         width: 100%;
         border-radius: 0;
         padding: 20px;
     }
-    #vignettePopulaire {
+    .vignettePopulaire {
         width: 100%;
         margin: 0 0 1vh 0;
     }
 
     /*Mise en forme responsive Hebergement*/
-    #hebergements {
+    .hebergements {
         width: 100%;
         margin-bottom: 0;
         background-color: white;
         padding: 20px;
     }
-    #vignetteHebergement {
+    .vignetteHebergement {
         display: block;
         margin: 2vh 0 2vh 0;
     }
@@ -610,11 +623,11 @@ dd {
         margin-bottom: 0;
     }
     /*Mise en forme responsiv activité*/
-    #div3 {
-        margin: 8px;
+    #container3 {
+        margin: 0;
         padding: 20px;
     }
-    #activite {
+    .activite {
         width: 100%;
         height: auto;
         row-gap: 5vh;
@@ -628,6 +641,15 @@ dd {
     .large img {
         height: 150px;
     }
+    .medium1,
+    .medium2,
+    .medium3,
+    .medium4 {
+        height: 150px;
+    }
+    .activite h2 {
+        font-size: 15px;
+    }
     /*footer smartphone*/
     footer {
         background-color: #f2f2f2;
@@ -635,16 +657,20 @@ dd {
         height: auto;
         padding: 2vh 5vw 5vh 5vw;
     }
-    dt {
+    ul:before {
+        content: attr(aria-label);
         font-weight: bold;
-        font-size: 15px;
+        font-size: 18px;
         margin-bottom: 15px;
         margin-left: 5px;
     }
+    ul {
+        padding-left: 0;
+    }
 
-    dd {
+    li {
         list-style: none;
-        font-size: 12px;
+        font-size: 15px;
         margin-left: 5px;
         margin-bottom: 5px;
     }
